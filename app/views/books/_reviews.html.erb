@@ -1,0 +1,29 @@
+<div class="reviews">
+    <h2>口コミ(<%= @reviews.count %>件)</h2>
+    <% @reviews.each do |review| %>
+        <div class="review-wrap">
+            <div class="review-img">
+                <%= image_tag review.user.image if review.user.image.attached? %>
+            </div>
+            <div class="review-text">
+                <p class="review-title"><%= review.title %></p>
+                <p class="review-content"><%= review.content %></p>
+                <span class="review-data"><%= review.user.username %> - <%= review.created_at.to_s(:datetime_jp) %></span>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<div class="review-field">
+    <%= form_with(model:[@book, @review], local: true) do |f| %>
+            <div class="field">
+                <%= f.label :title %><br />
+                <%= f.text_field :title %>
+            </div>
+            <div class="field">
+                <%= f.label :content %><br />
+                <%= f.text_field :content %>
+            </div>
+        <%= f.submit '口コミする' %>
+    <% end %>
+</div>

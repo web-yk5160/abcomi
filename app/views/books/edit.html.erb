@@ -1,5 +1,5 @@
 <%= @book.id %>
-<%= form_with(model: @post, local: true) do |f| %>
+<%= form_with(model: @book, local: true) do |f| %>
     <div class="field">
         <%= f.text_area :name, placeholder: "書籍名" %>
     </div>

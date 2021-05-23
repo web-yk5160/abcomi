@@ -1,4 +1,7 @@
 
+<%= image_tag @book.user.image, class: "book-user-image" if @book.user.image.attached? %>
+
+<p>投稿者: <%= @book.user.username %></p>
 <h1><%= @book.name %></h1>
 <p>投稿者：<%= @book.user.username %></p>
 <p><%= @book.content %></p>
@@ -9,5 +12,7 @@
 
 <% if current_user == @book.user %>
   <%= link_to "編集", edit_book_path %>
-  <%= link_to '削除', @post, method: :delete %>
+  <%= link_to '削除', @book, method: :delete %>
 <% end %>
+
+<%= render "reviews" %>

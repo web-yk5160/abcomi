@@ -1,1 +1,8 @@
-<%= render 'books/books' %> 
+<div class="user-data-article">
+    <%= image_tag @user.image if @user.image.attached?%>
+    <h1><%= @user.username %></h1>
+    <p class="user-data-follower">投稿数：<%= @user.books.count %></p>
+    <p class="user-data-follower">フォロワー数：</p>
+</div>
+
+<%= render 'books' %> 
