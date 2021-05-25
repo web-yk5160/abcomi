@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :books, expect: [:index] do
     resources :reviews, only: [:create, :destroy]
   end
+
+  post 'book_like/:id' => 'book_likes#create', as: 'create_book_like'
+  delete 'book_like/:id' => 'book_likes#destroy', as: 'destroy_book_like'
 end

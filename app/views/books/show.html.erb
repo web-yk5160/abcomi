@@ -1,7 +1,5 @@
-
 <%= image_tag @book.user.image, class: "book-user-image" if @book.user.image.attached? %>
 
-<p>投稿者: <%= @book.user.username %></p>
 <h1><%= @book.name %></h1>
 <p>投稿者：<%= @book.user.username %></p>
 <p><%= @book.content %></p>
@@ -14,5 +12,9 @@
   <%= link_to "編集", edit_book_path %>
   <%= link_to '削除', @book, method: :delete %>
 <% end %>
+
+<div id="book_<%= @book.id %>">
+  <%= render 'book_likes/book_like' %>
+</div>
 
 <%= render "reviews" %>
