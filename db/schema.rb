@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_070112) do
+ActiveRecord::Schema.define(version: 2021_05_27_021346) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -87,6 +87,24 @@ ActiveRecord::Schema.define(version: 2021_05_25_070112) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "study_abroad_expectations", charset: "utf8mb4", force: :cascade do |t|
+    t.string "expected_country"
+    t.string "expected_state"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_study_abroad_expectations_on_user_id"
+  end
+
+  create_table "study_abroad_targets", charset: "utf8mb4", force: :cascade do |t|
+    t.string "target_country"
+    t.string "target_state"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_study_abroad_targets_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -108,4 +126,6 @@ ActiveRecord::Schema.define(version: 2021_05_25_070112) do
   add_foreign_key "books", "users"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"
+  add_foreign_key "study_abroad_expectations", "users"
+  add_foreign_key "study_abroad_targets", "users"
 end

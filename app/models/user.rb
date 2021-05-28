@@ -13,7 +13,10 @@ class User < ApplicationRecord
             dependent:   :destroy
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-
+  has_many :study_abroad_expectations, dependent: :destroy
+  accepts_nested_attributes_for :study_abroad_expectations
+  has_many :study_abroad_targets, dependent: :destroy
+  accepts_nested_attributes_for :study_abroad_targets
   
   def liked_by?(book_id)
     book_likes.where(book_id: book_id).exists?

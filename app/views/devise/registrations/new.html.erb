@@ -26,6 +26,30 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <%= f.fields_for :study_abroad_expectations, @study_abroad_expectation do |f| %>
+    <div class="field">
+      <%= f.label :expected_country %><br />
+      <%= f.text_field :expected_country %>
+    </div>
+
+    <div class="field">
+      <%= f.label :expected_state %><br />
+      <%= f.text_field :expected_state %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :study_abroad_targets, @study_abroad_target do |f| %>
+    <div class="field">
+      <%= f.label :target_country %><br />
+      <%= f.text_field :target_country %>
+    </div>
+
+    <div class="field">
+      <%= f.label :target_state %><br />
+      <%= f.text_field :target_state %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
