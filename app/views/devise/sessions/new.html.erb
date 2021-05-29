@@ -19,7 +19,8 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "ログイン" %>
+    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "login login-guest"  %>
   </div>
 <% end %>
 
