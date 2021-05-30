@@ -1,16 +1,16 @@
 class Book < ApplicationRecord
-    belongs_to :user
-    has_one_attached :image
-    validates :user_id, presence: true
-    validates :name, presence: true, length: {maximum: 32}
-    has_many :reviews, dependent: :destroy
-    has_many :book_likes, dependent: :destroy
+  belongs_to :user
+  has_one_attached :image
+  validates :user_id, presence: true
+  validates :name, presence: true, length: { maximum: 32 }
+  has_many :reviews, dependent: :destroy
+  has_many :book_likes, dependent: :destroy
 
-    def book_like(user)
-        book_likes.create(user_id: user.id)
-    end
+  def book_like(user)
+    book_likes.create(user_id: user.id)
+  end
 
-    def book_unlike(user)
-        book_likes.find_by(user_id: user.id).destroy
-    end
+  def book_unlike(user)
+    book_likes.find_by(user_id: user.id).destroy
+  end
 end
