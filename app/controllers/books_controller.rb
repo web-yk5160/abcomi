@@ -53,5 +53,4 @@ class BooksController < ApplicationController
   def find_books
     @book = Book.find(params[:id])
   end
-
 end
