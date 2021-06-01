@@ -8,6 +8,14 @@ ja:
         password: パスワード
         activated: アクティブフラグ
         admin: 管理者フラグ
+      book:
+        name: 書籍名
+        price: 値段
+        author: 著者
+        category: カテゴリー
+        content: 書籍内容
+        published_at: 出版年月日
+        published_by: 出版社
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
