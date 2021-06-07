@@ -1,16 +1,16 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
-  validates :username, presence: true, length: { maximum: 30 }
+  has_one_attached :image
+  has_many :books, dependent: :destroy
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  validates :username, presence: true, length: { maximum: 12 }
   validates :email,
             presence: true,
             uniqueness: true,
             length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX }
-  has_one_attached :image
-  has_many :books, dependent: :destroy
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable
   has_many :reviews, dependent: :destroy
   has_many :book_likes, dependent: :destroy
   has_many :active_relationships, class_name: 'Relationship',
