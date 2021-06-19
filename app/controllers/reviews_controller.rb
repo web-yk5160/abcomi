@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to book_path(@book)
     else
-      render book_path(@book)
+      redirect_to book_path(@book), alert: "タイトルとレビュー内容を入力してください。"
     end
   end
 
