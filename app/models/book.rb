@@ -12,6 +12,8 @@ class Book < ApplicationRecord
   validates :content, presence: true
   validates :published_at, presence: true
   validates :published_by, presence: true
+  mount_uploader :image, ImageUploader
+  has_one_attached :image
 
   def book_like(user)
     book_likes.create(user_id: user.id)

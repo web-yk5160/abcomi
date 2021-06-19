@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'jquery-rails'
+gem 'font-awesome-sass'
+gem 'carrierwave'
 gem 'pry-rails'
 gem 'rails-i18n'
 

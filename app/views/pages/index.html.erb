@@ -1,2 +1,11 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<%= render 'index_top' %>
+<%= render 'index_search' %>
+<div class="index-col">
+  <div class="index-inner">
+    <%= render 'index_books' %>
+    <%= render 'index_ranking' %>
+  </div>
+  <div class="index-inner">
+    <%= render 'index_lastest_review', reviews: @reviews %>
+  </div>
+</div>

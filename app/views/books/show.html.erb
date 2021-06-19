@@ -1,7 +1,8 @@
-<%= image_tag @book.user.image, class: "book-user-image" if @book.user.image.attached? %>
+
 
 <h1><%= @book.name %></h1>
 <p>投稿者：<%= @book.user.username %></p>
+<p><%= image_tag(@book.image.url, size: '100x100') %></p>
 <p><%= @book.content %></p>
 <p><%= @book.author %></p>
 <p><%= @book.price %></p>

@@ -25,6 +25,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :study_abroad_expectations
   has_many :study_abroad_targets, dependent: :destroy
   accepts_nested_attributes_for :study_abroad_targets
+  mount_uploader :image, ImageUploader
+  has_one_attached :image
+
 
   def liked_by?(book_id)
     book_likes.exists?(book_id: book_id)

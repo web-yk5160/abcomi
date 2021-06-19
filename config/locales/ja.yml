@@ -3,7 +3,7 @@ ja:
   activerecord:
     attributes:
       user:
-        name: 名前
+        username: ユーザー名
         email: メールアドレス
         password: パスワード
         activated: アクティブフラグ

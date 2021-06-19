@@ -20,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up,
-                                      keys: [:username,
+                                      keys: [:image, :username,
                                               { study_abroad_expectations_attributes: [:expected_country, :expected_state],
                                                 study_abroad_targets_attributes: [:target_country, :target_state] }])
     devise_parameter_sanitizer.permit(:account_update,

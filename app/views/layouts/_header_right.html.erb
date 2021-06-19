@@ -1,0 +1,17 @@
+<div class="header-right">
+    <div style="position: relative; display:inline;">
+    </div>
+    <%= render 'layouts/header_dropdown' %>
+    <nav>
+    <% if user_signed_in? %>
+      <strong><%= link_to current_user.username, user_path(current_user.id) %></strong>
+      <%= link_to '新規書籍投稿', new_book_path %>
+      <%= link_to 'プロフィール変更', edit_user_registration_path %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn--orange btn--radius" %>
+    <% else %>
+      <%= link_to '新規無料登録', new_user_registration_path, class: "btn--white btn--radius" %>
+      <%= link_to 'ログイン', new_user_session_path, class: "btn--orange btn--radius" %>
+    <% end %>
+    </nav>
+
+</div>

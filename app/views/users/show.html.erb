@@ -1,5 +1,5 @@
-<div class="user-data-article">
-    <%= image_tag @user.image if @user.image.attached?%>
+<div class="">
+    <%= image_tag(@user.image.url) %>
     <h1><%= @user.username %></h1>
     <p class="user-data-follower">投稿数：<%= @user.books.count %></p>
     <section class="stats">
