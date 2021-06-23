@@ -1,0 +1,11 @@
+<div class="book-inner">
+    <% search_books.each do |b| %>
+    <div class="book-partial-card">
+    <%= link_to(book_path(b.id), class:"book-card-link") do %>
+        <% end %>
+        <div class="book-partial-content">
+            <h3><%= b.name %></h3>
+        </div>
+    </div>
+    <% end %>
+</div>

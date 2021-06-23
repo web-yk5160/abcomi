@@ -4,7 +4,14 @@ class BooksController < ApplicationController
   before_action :find_books, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.all
+    if params[:q].present?
+      @search = Book.ransack(search_params)
+      @search_books = @search.result
+    else
+      params[:q] = { sorts: 'id desc' }
+      @search = Book.ransack
+      @search_books = Book.all
+    end
   end
 
   def show
@@ -42,6 +49,10 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     redirect_to @book.user
+  end
+
+  def search 
+    @search_books = @q.result
   end
 
   private

@@ -381,6 +381,8 @@ footer {
 .top-message-subtitle {
   margin-left: 35px;
   margin-top: 47px;
+  font-size: 31px;
+  letter-spacing: 1.55px;
 }
 
 .top-message-title {
@@ -388,18 +390,41 @@ footer {
   left: 51px;
   top: 40%;
   transform: translateY(-50%);
-  font-size: 26px;
+  font-size: 96px;
   font-weight: bold;
-  font-size: 54px;
   padding-bottom: 15px;
 }
 
 .top-message-text {
   position: absolute;
   left: 50px;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   margin-top: 18px;
+}
+
+.search-form{
+  border:none;
+  font-size:12px;
+  height: 53px;
+  width:518px;
+  background-color: $main-bg;
+  padding: 10px;
+  position: absolute;
+  left: 51px;
+  top: 70%;
+  box-shadow: 0px 0px 10px #00000040;
+}
+
+.search-btn{
+  border:none;
+  background-color: $main-bg;
+  margin-right: 15px;
+  position: absolute;
+  left: 545px;
+  top:75%;
+  color: #f56500;
+  font-size: 15px;
 }
 
 /* ログイン、ログアウトボタン

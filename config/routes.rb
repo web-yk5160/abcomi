@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   resources :books, expect: [:index] do
     resources :reviews, only: [:create, :destroy]
+    collection do
+      match 'search' => 'books#search', via: %i[get post]
+    end
   end
 
   resources :relationships, only: [:create, :destroy]
