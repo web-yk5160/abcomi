@@ -1,29 +1,32 @@
 <h3>投稿一覧</h3>
-<table class="table table-bordered border-primary table-hover table-sm">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">書籍名</th>
-      <th scope="col">書籍画像</th>
-      <th scope="col">値段</th>
-      <th scope="col">著者</th>
-      <th scope="col">カテゴリー</th>
-      <th scope="col">書籍内容</th>
-      <th scope="col">出版日</th>
-      <th scope="col">出版社</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @books.each do |book| %>
-            <tr>
-                <td><%= link_to book.name, book_path(book.id) %></td>
-                <td><%= image_tag(book.image.url, size: '100x100') %></td>
-                <td><%= book.price %></td>
-                <td><%= book.author %></td>
-                <td><%= book.category %></td>
-                <td><%= book.content %></td>
-                <td><%= book.published_at.strftime('%Y/%m/%d') %></td>
-                <td><%= book.published_by %></td>
-            </tr>
-        <% end %>
-  </tbody>
-</table>
+
+<div class="book-list">
+  <ul class="book-group">
+  <% @books.each do |book| %>
+    <li class="group__book">
+      <div class="book__thumbnail">
+        <div class="thumbnail__cover">
+          <a href="">
+            <%  if book.image.url %>
+              <td><%= image_tag(book.image.url, size: '100x100') %></td>
+            <% else %>
+              <%= image_tag "noimage.jpg", class: "default-image" %>
+            <% end %>
+          </a>
+        </div>
+        <div class="thumbnail__action">
+        </div>
+      </div>
+      <div class="book__detail">
+        <div class="detail__title">
+          <a href=""><%= link_to book.name, book_path(book.id) %></a>
+        </div>
+
+        <ul class="detail__authors">
+          <li><a href=""><%= book.author %></a></li>
+        </ul>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -8,6 +8,7 @@ ja:
         password: パスワード
         activated: アクティブフラグ
         admin: 管理者フラグ
+        image: 画像
       book:
         name: 書籍名
         price: 値段
@@ -16,6 +17,12 @@ ja:
         content: 書籍内容
         published_at: 出版年月日
         published_by: 出版社
+      study_abroad_expectation:
+        expected_country: 留学希望国
+        expected_state: 留学希望地域
+      study_abroad_target:
+        target_country: 留学した国
+        target_state: 留学した地域
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

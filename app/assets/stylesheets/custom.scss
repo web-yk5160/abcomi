@@ -32,6 +32,12 @@ a:hover{
   opacity: 0.75;
 }
 
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 /* エラーメッセージ
 ---------------------------------------------------*/
 
@@ -92,14 +98,15 @@ header{
 main{
   width: 100%;
   padding:40px 0;
-  background-color: $main-bg;
+  // background-color: $main-bg;
   position: relative;
+  flex: 1;
 }
 
 .post-section{
   width: 1280px;
   margin:0 auto;
-  padding:0 40px;
+  padding:0;
 }
 
 /* wrapperとheading
@@ -258,6 +265,8 @@ footer {
   background-color: white;
   width:100%;
   border-top: 1px solid #e6e6e6;
+  // position: absolute;/*←絶対位置*/
+  //   bottom: 0; /*下に固定*/
 }
 
 .footer-inner {
@@ -266,6 +275,7 @@ footer {
   text-align: center;
   background-color: #f56500;
   color: #fff;
+  
 }
 
 .footer-wrapper {
@@ -395,26 +405,169 @@ footer {
 /* ログイン、ログアウトボタン
 ---------------------------------------------------*/
 
-.btn--orange {
+.btn-orange {
   color: #fff;
   background-color: #eb6100;
   padding: 10px;
   margin-left: 10px;
+  border-radius: 100vh;
+  padding: 10px 34px;
 }
-.btn--orange:hover {
+.btn-orange:hover {
   color: #fff;
   background: #f56500;
 }
 
-.btn--radius {
-  border-radius: 100vh;
-}
+// .btn--radius {
+//   border-radius: 100vh;
+// }
 
 /* 新規登録、プロフィール変更
 ---------------------------------------------------*/
-.btn--white {
+.btn-white {
   color: $text-main;
   background-color: #fff;
   border: 2px solid #f56500;
   padding: 10px;
+  border-radius: 100vh;
+}
+
+/* セッション関係
+---------------------------------------------------*/
+.sessions-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    font-size: 32px;
+  }
+}
+
+.sessions-field {
+  display: flex;
+  margin-top: 32px;
+}
+
+.sessions-label {
+  width: 213px;
+  background: rgba(244, 129, 11, 1);
+  color: #fff;
+  font-size: 21px;
+  height: 53px;
+  line-height: 48px;
+  text-align: center;
+  // padding-left: 10px;
+  position: relative;
+  padding-left: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 21px;
+  border-top-left-radius : 5px;
+  border-bottom-left-radius : 5px;
+}
+
+.sessions-label-content {
+  width: 213px;
+  background: rgba(244, 129, 11, 1);
+  color: #fff;
+  font-size: 21px;
+  height: 53px;
+  line-height: 48px;
+  text-align: center;
+  // padding-left: 10px;
+  position: relative;
+  padding-left: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 21px;
+  border-top-left-radius : 5px;
+  border-bottom-left-radius : 5px;
+  height: 300px;
+}
+
+.sessions-label-input {
+  width: 767px;
+  border-top-right-radius : 5px;
+  border-bottom-right-radius : 5px;
+  border: 1px solid $text-main;
+  border-left: none;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.sessions-label-input-content {
+  width: 767px;
+  border-top-right-radius : 5px;
+  border-bottom-right-radius : 5px;
+  border: 1px solid $text-main;
+  border-left: none;
+  padding: 12px;
+  font-size: 14px;
+  height: 300px;
+}
+
+.actions {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.submit-btn {
+  color: #fff;
+  background-color: #eb6100;
+  padding: 10px 127px;
+  margin-left: 10px;
+  border-radius: 100vh;
+  border: none;
+  margin-bottom: 95px;
+  font-size: 21px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 80px;
+}
+
+.login-btn {
+  color: #fff;
+  background-color: #eb6100;
+  // padding: 10px 127px ;
+  border-radius: 100vh;
+  border: none;
+  font-size: 21px;
+  margin-top: 30px;
+  margin-bottom: 85px;
+  width: 300px;
+  text-align: center;
+}
+
+.guest-login-btn {
+  color: #eb6100;
+  background-color: #fff;
+  // padding: 10px 127px ;
+  border-radius: 100vh;
+  border: none;
+  font-size: 21px;
+  margin-top: 30px;
+  margin-bottom: 85px;
+  border: 2px solid #f56500;
+  width: 300px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+.group__book {
+  display: inline-block;
+  min-height: 250px;
+  width: 132px;
+  font-size:0;
+}
+
+.default-image {
+  width: 100px;
+  height: 100px;
 }

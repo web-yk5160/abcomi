@@ -1,36 +1,53 @@
+<div class="sessions-wrapper">
+
+<h2>新規書籍投稿</h2>
+
 <%= form_with(model: @book, local: true) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <%= current_user.id %>
-    <div class="field">
-        <%= f.text_field :name, placeholder: "書籍名" %>
+
+    <div class="sessions-field">
+        <%= f.label :name, class: "sessions-label" %>
+        <%= f.text_field :name, placeholder: "書籍名", class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-        <%= f.file_field :image %>
+    <div class="sessions-field">
+        <%= f.label :image, class: "sessions-label", class: "sessions-label" %>
+        <%= f.file_field :image, class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-        <%= f.number_field :price, placeholder: "値段" %>
+    <div class="sessions-field">
+        <%= f.label :price, class: "sessions-label" %>
+        <%= f.number_field :price, placeholder: "値段", class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-        <%= f.text_field :author, placeholder: "著者" %>
+    <div class="sessions-field">
+        <%= f.label :author, class: "sessions-label" %>
+        <%= f.text_field :author, placeholder: "著者", class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-        <%= f.text_field :category, placeholder: "カテゴリー" %>
+    <div class="sessions-field">
+        <%= f.label :category, class: "sessions-label" %>
+        <%= f.text_field :category, placeholder: "カテゴリー", class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-        <%= f.text_area :content, placeholder: "書籍内容" %>
+    <div class="sessions-field">
+        <%= f.label :content, class: "sessions-label-content" %>
+        <%= f.text_area :content, placeholder: "書籍内容", class: "sessions-label-input-content" %>
     </div>
 
-    <div class="field">
-        <%= f.date_field :published_at, placeholder: "出版日" %>
+    <div class="sessions-field">
+        <%= f.label :published_at, class: "sessions-label" %>
+        <%= f.date_field :published_at, placeholder: "出版日", class: "sessions-label-input" %>
     </div>
-    
-    <div class="field">
-        <%= f.text_field :published_by, placeholder: "出版社" %>
+
+    <div class="sessions-field">
+        <%= f.label :published_by, class: "sessions-label" %>
+        <%= f.text_field :published_by, placeholder: "出版社", class: "sessions-label-input" %>
     </div>
-        <%= f.submit "作成", class: "btn btn-primary" %>
+
+    <div class="actions">
+        <%= f.submit "作成", class: "submit-btn" %>
+    </div>
 <% end %>
+
+</div>

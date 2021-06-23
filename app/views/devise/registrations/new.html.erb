@@ -1,62 +1,61 @@
-<h2>Sign up</h2>
+<div class="sessions-wrapper">
+<h2>新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <span class="image">
-    <%= f.file_field :image %>
-  </span>
-
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+  <div class="sessions-field">
+    <%= f.label :username, class: "sessions-label" %><br />
+    <%= f.text_field :username, class: "sessions-label-input" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="sessions-field">
+    <%= f.label :email, class: "sessions-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "sessions-label-input" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="sessions-field">
+    <%= f.label :password, class: "sessions-label" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "sessions-label-input" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="sessions-field">
+    <%= f.label :password_confirmation, class: "sessions-label" %><br />
+    <%= f.password_field :password_confirmation, :placeholder => "6文字以上", autocomplete: "new-password", class: "sessions-label-input" %>
   </div>
 
   <%= f.fields_for :study_abroad_expectations, @study_abroad_expectation do |f| %>
-    <div class="field">
-      <%= f.label :expected_country %><br />
-      <%= f.text_field :expected_country %>
+    <div class="sessions-field">
+      <%= f.label :expected_country, class: "sessions-label" %><br />
+      <%= f.text_field :expected_country, class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-      <%= f.label :expected_state %><br />
-      <%= f.text_field :expected_state %>
+    <div class="sessions-field">
+      <%= f.label :expected_state, class: "sessions-label" %><br />
+      <%= f.text_field :expected_state, class: "sessions-label-input" %>
     </div>
   <% end %>
 
   <%= f.fields_for :study_abroad_targets, @study_abroad_target do |f| %>
-    <div class="field">
-      <%= f.label :target_country %><br />
-      <%= f.text_field :target_country %>
+    <div class="sessions-field">
+      <%= f.label :target_country, class: "sessions-label" %><br />
+      <%= f.text_field :target_country, class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-      <%= f.label :target_state %><br />
-      <%= f.text_field :target_state %>
+    <div class="sessions-field">
+      <%= f.label :target_state, class: "sessions-label" %><br />
+      <%= f.text_field :target_state, class: "sessions-label-input" %>
     </div>
   <% end %>
 
+  <div class="sessions-field">
+    <%= f.label :image, class: "sessions-label", class: "sessions-label" %>
+    <%= f.file_field :image, class: "sessions-label-input" %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録", class: "submit-btn" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
