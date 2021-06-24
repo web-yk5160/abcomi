@@ -5,12 +5,12 @@ class BooksController < ApplicationController
 
   def index
     if params[:q].present?
-      @search = Book.ransack(search_params)
-      @search_books = @search.result
+      @search = Book.ransack
+      @search_books = @search.result.page(params[:page]).per(12)
     else
       params[:q] = { sorts: 'id desc' }
       @search = Book.ransack
-      @search_books = Book.all
+      @search_books = Book.all.page(params[:page]).per(12)
     end
   end
 
@@ -52,7 +52,7 @@ class BooksController < ApplicationController
   end
 
   def search 
-    @search_books = @q.result
+    @search_books = @q.result.page(params[:page]).per(12)
   end
 
   private
