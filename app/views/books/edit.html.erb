@@ -1,35 +1,45 @@
-<%= @book.id %>
+<div class="sessions-wrapper">
+
+<h2>書籍編集</h2>
+
 <%= form_with(model: @book, local: true) do |f| %>
-    <div class="field">
-        <%= f.text_area :name, placeholder: "書籍名" %>
+    <div class="sessions-field">
+        <%= f.label :name, class: "sessions-label" %><br />
+        <%= f.text_field :name, class: "sessions-label-input" %>
     </div>
 
-    <div class="field">
-        <%= f.file_field :image %>
+    　<div class="sessions-field">
+        <%= f.label :price, class: "sessions-label" %><br />
+        <%= f.number_field :price, class: "sessions-label-input" %>
     </div>
 
-    　<div class="field">
-        <%= f.number_field :price, placeholder: "値段" %>
+    　<div class="sessions-field">
+        <%= f.label :author, class: "sessions-label" %><br />
+        <%= f.text_field :author, class: "sessions-label-input" %>
     </div>
 
-    　<div class="field">
-        <%= f.text_field :author, placeholder: "著者" %>
+    　<div class="sessions-field">
+        <%= f.label :category, class: "sessions-label" %><br />
+        <%= f.text_field :category, class: "sessions-label-input" %>
     </div>
 
-    　<div class="field">
-        <%= f.text_field :category, placeholder: "カテゴリー" %>
+    　<div class="sessions-field">
+        <%= f.label :content, class: "sessions-label-content" %><br />
+        <%= f.text_area :content, class: "sessions-label-input-content" %>
     </div>
 
-    　<div class="field">
-        <%= f.text_area :content, placeholder: "書籍内容" %>
+    　<div class="sessions-field">
+        <%= f.label :published_at, class: "sessions-label" %><br />
+        <%= f.date_field :published_at, class: "sessions-label-input" %>
     </div>
 
-    　<div class="field">
-        <%= f.date_field :published_at, placeholder: "出版日" %>
+    <div class="sessions-field">
+        <%= f.label :published_by, class: "sessions-label" %><br />
+        <%= f.text_field :published_by, class: "sessions-label-input" %>
     </div>
-
-    <div class="field">
-        <%= f.text_field :published_by, placeholder: "出版社" %>
-    </div>
-    <%= f.submit "編集", class: "btn btn-primary" %>
+    <div class="actions">
+        <%= f.submit "編集", class: "submit-btn"  %>
+    <div>
 <% end %>
+
+</div>

@@ -122,6 +122,7 @@ main{
   padding: 20px 28px;
   margin-bottom: 40px;
   box-shadow: $main-shadow;
+  border: 1px solid #D4DACB;
 }
 
 .posts-heading {
@@ -149,6 +150,15 @@ main{
 
 .index-inner{
   width:47.5%;
+}
+
+.book-inner {
+  width: 30.5%;
+}
+
+.review-inner {
+  width: 69.5%;
+  padding-left: 30px;
 }
 
 .newest-card{
@@ -633,4 +643,241 @@ footer {
     border-radius: 50%;
     margin: 0 6px;
   }
+}
+
+/* 書籍詳細
+---------------------------------------------------*/
+.review-wrapper {
+  width: 100%;
+  border-radius: 4px;
+  background-color: white;
+  padding: 20px 28px;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 6px -2px #ced4da;
+  border: 1px solid #D4DACB;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.review-flex {
+  display: flex;
+  border-bottom: 2px solid #D4DACB;
+  padding-bottom: 24px;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.review-username {
+  margin-left: 10px;
+  color: #F4810B;
+}
+
+.review-title {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.review-content {
+  margin-left: 10px;
+}
+
+.review-data {
+  margin-left: 10px;
+}
+
+.review-header {
+  border-bottom: 2px solid #F4810B;
+  margin-bottom: 22px;
+}
+
+.review-wrap {
+  text-align: center;
+}
+
+.book-name {
+  color: #F4810B;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.author-name {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+dt {
+  width: 30%;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #999;
+}
+
+dd {
+  width: 70%;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.book-like {
+  margin-right: 10px;
+}
+
+.book-image {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.like-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #808080;
+}
+
+.unlike-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #e54747;
+  }
+
+/* ユーザー詳細
+---------------------------------------------------*/
+.user-wrapper {
+  width: 100%;
+  border-radius: 4px;
+  background-color: white;
+  padding: 20px 28px;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 6px -2px #ced4da;
+  border: 1px solid #D4DACB;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.user-inner {
+  display: flex;
+}
+
+.stats {
+  display: flex;
+  margin-bottom: 17px;
+}
+
+.stat {
+  color: #F4810B;
+  font-size: 34px;
+}
+
+.user-text {
+  margin-left: 30px;
+
+  p {
+    text-align: left;
+  }
+}
+
+.follow {
+  font-size: 17px;
+  color: #969696;
+  margin-right: 45px;
+
+  &::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 0px;
+    border-top: solid 2px #969696;
+    border-right: solid 2px #969696;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    margin-left: 13px;
+    margin-top: 9px;
+  }
+}
+
+.favorite {
+  width: 300px;
+}
+
+.user-btn {
+  width: 300px;
+  text-align: right;
+  margin: 0 0 0 auto;
+}
+
+.user-post {
+  width: 100%;
+  border-radius: 4px;
+  background-color: white;
+  padding: 20px 28px;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 6px -2px #ced4da;
+  border: 1px solid #D4DACB;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.book-group {
+  display: flex;
+  width: 132px;
+  min-height: 250px;
+  padding: 15px 5px 15px 5px;
+  box-sizing: border-box;
+}
+
+.book-list {
+  margin-right: 20px;
+}
+
+.follow-btn {
+  color: #eb6100;
+  background-color: #fff;
+  padding: 10px 10px;
+  border: 2px solid #eb6100;
+  border-radius: 100vh;
+  margin-bottom: 20px;
+  font-size: 21px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.abroad-btn {
+  color: #eb6100;
+  background-color: #fce2c7;
+  padding: 10px 10px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 21px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.message-btn {
+  color: #fff;
+  background-color: #eb6100;
+  padding: 10px 10px;
+  border-radius: 100vh;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 21px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
 }

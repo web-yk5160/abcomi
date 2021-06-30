@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @books = @user.books
+    @expected_country = @user.study_abroad_expectations
+    @target_country = @user.study_abroad_targets
   end
 
   def following

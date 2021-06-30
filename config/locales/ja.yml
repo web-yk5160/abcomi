@@ -30,6 +30,9 @@ ja:
       study_abroad_target:
         target_country: 留学した国
         target_state: 留学した地域
+      review:
+        title: タイトル
+        content: 口コミ
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -1,4 +1,6 @@
 <%= form_with(model: current_user.active_relationships.build, data: { remote: true }) do |f| %>
     <div><%= hidden_field_tag :followed_id, @user.id %></div>
-    <%= f.submit "フォローする", class: "btn btn-primary" %>
+    <%= f.button type: "submit", class: "follow-btn" do %>
+        <i class="fas fa-users"></i> フォローする
+    <% end %>
 <% end %>

@@ -17,7 +17,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @reviews = @book.reviews
-    @review = Review.new
+    @book_reviews = @book.reviews.all.page(params[:page]).per(5)
   end
 
   def new

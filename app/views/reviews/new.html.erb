@@ -1,0 +1,23 @@
+<div class="sessions-wrapper">
+
+    <h2>書籍口コミ投稿</h2>
+
+    <div class="review-field">
+        <%= form_with(model:[@book, @review], local: true) do |f| %>
+            <div class="sessions-field">
+                <%= f.label :title, class: "sessions-label" %>
+                <%= f.text_field :title, class: "sessions-label-input" %>
+            </div>
+
+            <div class="sessions-field">
+                <%= f.label :content, class: "sessions-label-content" %>
+                <%= f.text_area :content, class: "sessions-label-input-content", :placeholder => "口コミを記入してください。" %>
+            </div>
+
+            <div class="actions">
+                <%= f.submit '口コミ投稿', class: "submit-btn" %>
+            </div>
+        <% end %>
+    </div>
+
+</div>

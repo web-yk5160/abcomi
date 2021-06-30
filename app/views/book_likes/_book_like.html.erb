@@ -1,5 +1,11 @@
 <% if current_user.liked_by?(@book.id) %>
-    <%= link_to 'いいねを外す', destroy_book_like_path(@book), method: :DELETE, remote: true %> <%= @book.book_likes.count %>
+    <%= link_to destroy_book_like_path(@book), method: :DELETE, remote: true do %>
+    <i class="fas fa-heart unlike-btn"></i>
+    <%= @book.book_likes.count %>
+    <% end %>
 <% else %>
-    <%= link_to 'いいね', create_book_like_path(@book), method: :POST, remote: true %> <%= @book.book_likes.count %>
+    <%= link_to create_book_like_path(@book), method: :POST, remote: true do %>
+    <i class="far fa-heart like-btn" ></i>
+    <%= @book.book_likes.count %>
+    <% end %>
 <% end %>

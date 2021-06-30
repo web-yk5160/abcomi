@@ -1,32 +1,21 @@
-<h3>投稿一覧</h3>
+<h3 class="review-header">投稿一覧</h3>
 
 <div class="book-list">
   <ul class="book-group">
-  <% @books.each do |book| %>
-    <li class="group__book">
-      <div class="book__thumbnail">
-        <div class="thumbnail__cover">
-          <a href="">
-            <%  if book.image.url %>
-              <td><%= image_tag(book.image.url, size: '100x100') %></td>
-            <% else %>
-              <%= image_tag "noimage.jpg", class: "default-image" %>
-            <% end %>
-          </a>
-        </div>
-        <div class="thumbnail__action">
-        </div>
-      </div>
-      <div class="book__detail">
-        <div class="detail__title">
-          <a href=""><%= link_to book.name, book_path(book.id) %></a>
-        </div>
-
-        <ul class="detail__authors">
-          <li><a href=""><%= book.author %></a></li>
-        </ul>
-      </div>
-    </li>
+    <% @books.each do |book| %>
+      <%  if book.image.url %>
+        <li class="book-list">
+          <div><%= link_to book_path(book.id) do %><%= image_tag(book.image.url, size: '120x145') %><% end %></div>
+          <div><%= link_to book_path(book.id) do %><%= book.name %><% end %></div>
+          <div><%= link_to book_path(book.id) do %><%= book.author %><% end %></div>
+        </li>
+      <% else %>
+        <li class="book-list">
+          <div><%= link_to book_path(book.id) do %><%= image_tag "noimage.jpg", :size => '120x145' %><% end %></div>
+          <div><%= link_to book_path(book.id) do %><%= book.name %><% end %></div>
+          <div><%= link_to book_path(book.id) do %><%= book.author %><% end %></div>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </div>

@@ -1,29 +1,21 @@
-<div class="reviews">
-    <h2>口コミ(<%= @reviews.count %>件)</h2>
-    <% @reviews.each do |review| %>
-        <div class="review-wrap">
-            <div class="review-img">
-                
+<div class="reviews review-inner">
+    <div class="review-wrapper">
+        <h3 class="review-header">口コミ</h3>
+        <% @book_reviews.each do |review| %>
+            <div class="review-wrap">
+                <div class="review-flex">
+                    <div class="review-img">
+                        <p><%= image_tag(review.user.image.url, size: '50x50') %></p>
+                    </div>
+                    <div class="review-text">
+                        <p class="review-username"><%= review.user.username %></p>
+                        <p class="review-title"><%= review.title %></p>
+                        <p class="review-content"><%= review.content %></p>
+                        <span class="review-data"><%= review.created_at.to_s(:datetime_jp) %></span>
+                    </div>
+                </div>
             </div>
-            <div class="review-text">
-                <p class="review-title"><%= review.title %></p>
-                <p class="review-content"><%= review.content %></p>
-                <span class="review-data"><%= review.user.username %> - <%= review.created_at.to_s(:datetime_jp) %></span>
-            </div>
-        </div>
-    <% end %>
-</div>
-
-<div class="review-field">
-    <%= form_with(model:[@book, @review], local: true) do |f| %>
-            <div class="field">
-                <%= f.label :title %><br />
-                <%= f.text_field :title %>
-            </div>
-            <div class="field">
-                <%= f.label :content %><br />
-                <%= f.text_field :content %>
-            </div>
-        <%= f.submit '口コミする' %>
-    <% end %>
+        <% end %>
+        <%= paginate @book_reviews %>
+    </div>
 </div>

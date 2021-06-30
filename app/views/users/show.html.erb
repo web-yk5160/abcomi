@@ -1,11 +1,47 @@
-<div class="">
-    <%= image_tag(@user.image.url) %>
-    <h1><%= @user.username %></h1>
-    <p class="user-data-follower">投稿数：<%= @user.books.count %></p>
-    <section class="stats">
-        <%= render 'shared/stats' %>
-    </section>
+<div class="sessions-wrapper">
+    <h2><%= @user.username %></h2>
+    <div class="user-wrapper">
+        <div class="user-inner">
+            <div class="user-image">
+                <%= image_tag(@user.image.url, size: '200x200') %>
+            </div>
+            <div class="user-text">
+                <section class="stats">
+                    <%= render 'shared/stats' %>
+                </section>
 
-    <%= render 'follow_form', user: @user if user_signed_in? %>
+                <% @expected_country.each do |ec| %>
+                    <p>留学希望国　： <%= ec.expected_country %></p>
+                    <p>留学希望都市： <%= ec.expected_state %></p>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="user-btn">
+            <% unless @user == current_user %>
+                <% if current_user.following?(@user) %>
+                    <%= render 'users/unfollow' %>
+                <% else %>
+                    <%= render 'users/follow' %>
+                <% end %>
+            <% end %>
+            <button class="message-btn"
+                    type="button">
+                <i class="fa fa-envelope"></i> メッセージを送る
+            </button>
+            <button class="abroad-btn"
+                    type="button">
+                <i class="fa fa-calendar"></i> 留学日記
+            </button>
+        </div>
+    </div>
+
+    <div class="user-post">
+        <%= render 'books/books' %>
+    </div>
+
+    <div class="user-post">
+        留学日記
+    </div>
+
 </div>
-<%= render 'books/books' %>
