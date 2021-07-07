@@ -1,13 +1,25 @@
-<div class="book-inner">
-    <% search_books.each do |b| %>
-    <div class="book-partial-card">
-    <%= link_to(book_path(b.id), class:"book-card-link") do %>
+<h3 class="review-header">検索結果一覧</h3>
+
+<div class="">
+    <ul class="book-group">
+        <% search_books.each do |book| %>
+            <%  if book.image.url %>
+                <li class="book-list">
+                <div><%= link_to book_path(book.id) do %><%= image_tag(book.image.url, size: '120x145') %><% end %></div>
+                <div><%= link_to book_path(book.id) do %><%= book.name %><% end %></div>
+                <div><%= link_to book_path(book.id) do %><%= book.author %><% end %></div>
+                </li>
+            <% else %>
+                <li class="book-list">
+                <div><%= link_to book_path(book.id) do %><%= image_tag "noimage.jpg", :size => '120x145' %><% end %></div>
+                <div><%= link_to book_path(book.id) do %><%= book.name %><% end %></div>
+                <div><%= link_to book_path(book.id) do %><%= book.author %><% end %></div>
+                </li>
+            <% end %>
         <% end %>
-        <div class="book-partial-content">
-            <h3><%= b.name %></h3>
         </div>
-    </div>
-    <% end %>
+    </ul>
 </div>
+
 
 <%= paginate search_books %>

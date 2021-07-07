@@ -825,16 +825,17 @@ dd {
   border-radius: 4px;
   background-color: white;
   padding: 20px 28px;
-  margin-bottom: 40px;
   box-shadow: 0 3px 6px -2px #ced4da;
   border: 1px solid #D4DACB;
   margin: 0 auto;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .book-group {
   display: flex;
-  width: 132px;
+  flex-wrap: wrap;
+  width: 100%;
   min-height: 250px;
   padding: 15px 5px 15px 5px;
   box-sizing: border-box;
@@ -842,6 +843,8 @@ dd {
 
 .book-list {
   margin-right: 20px;
+  margin-bottom: 30px;
+  width: 132px;
 }
 
 .follow-btn {
@@ -880,4 +883,23 @@ dd {
   width: 300px;
   text-align: center;
   cursor: pointer;
+}
+
+/* ユーザーフォロー
+---------------------------------------------------*/
+
+.follow-user {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px 5px 35px 5px;
+  box-sizing: border-box;
+}
+
+.follow-inner {
+  margin-right: 20px;
+}
+
+.no-follower {
+  margin: 0 auto;
 }

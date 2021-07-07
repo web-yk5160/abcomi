@@ -2,16 +2,15 @@
   <div class="posts-heading">
     <h2>最新の口コミ</h2>
   </div>
-  <% reviews.each do |review| %>
+  <% reviews.reverse.each do |review| %>
   <div class="newest-card">
-    
     <div class="newest-image-inner">
-        <%= image_tag(review.user.image.url, :class => "newest-image") %>
+        <%= link_to user_path(review.user.id) do %><%= image_tag(review.user.image.url, :class => "newest-image") %><% end %>
     </div>
     <div class="newest-right">
       <div>
-        <h3><%= review.user.username %></h3>
-        <p><%= review.content %></p>
+        <h3><%= link_to user_path(review.user.id) do %><%= review.user.username %><% end %></h3>
+        <p><%= link_to user_path(review.user.id) do %><%= review.content %><% end %></p>
       </div>
     </div>
   </div>

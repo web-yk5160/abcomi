@@ -1,9 +1,21 @@
 <% provide(:title, "#{@user.username}さん#{@title}") %>
-<h2><%= @user.username %>さん<%= @title %></h2>
-<section>
-  <% @users.each do |user| %>
-    <article>
-      <%= user.username %>
-    </article>
-  <% end %>
-</section>
+<div class="sessions-wrapper">
+  <h2><%= @user.username %>さん<%= @title %></h2>
+  <div class="user-post">
+    <div class="follow-user">
+    <% if @users.empty? %>
+      <p class="no-follower"><%= @user.username %>さん<%= @title %>はいません。</p>
+    <% else %>
+      <% @users.each do |user| %>
+          <div class="follow-inner">
+              <%= link_to user_path(user) do %>
+                <%= image_tag(user.image.url, :class => "newest-image") %>
+                <p><%= user.username %></p>
+              <% end %>
+          </div>
+      <% end %>
+    <% end %>
+
+    </div>
+  </div>
+</div>
